@@ -2,8 +2,8 @@ CC = g++
 
 all: hw06 tar
 
-hw06: hw06.cpp hw06.h addbook.o delbook.o showbook.o showbooks.o menu.o popList.o
-	$(CC) hw06.cpp -o hw06 addbook.o delbook.o
+hw06: hw06.cpp hw06.h addbook.o delbook.o showbook.o showbooks.o menu.o
+	$(CC) hw06.cpp -o hw06 addbook.o delbook.o showbook.o showbooks.o menu.o
 
 addbook.o: hw06.h addbook.cpp
 	$(CC) -c addbook.cpp -o addbook.o
@@ -19,9 +19,6 @@ showbooks.o: hw06.h showbooks.cpp
 
 menu.o: hw06.h menu.cpp
 	$(CC) -c menu.cpp -o menu.o
-
-popList.o: hw06.h popList.cpp
-	$(CC) -c popList.cpp -o popList.o
 
 clean:
 	rm *.o hw06 hw06.tar hw06.scr
